@@ -13,45 +13,19 @@
           <router-link to="/share"  class="navbar-item">Share</router-link>
           <router-link to="/workouts"  class="navbar-item">Workouts</router-link>
           <router-link to="/myprofile"  class="navbar-item">MyProfile</router-link>
-          
-            
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <router-link to="/about" class="navbar-item">
-                  About
-                </router-link>
-
-                <a class="navbar-item" href="jobs.html">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-          </div>
+        </div>
       
           <div class="navbar-end">
-            <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
+                <a class="button is-light">
+                  <router-link to="/signup" class="navbar-item" >Sign Up</router-link>
                 </a>
                 <a class="button is-light">
-                  Log in
+                  <router-link to="/login" class="navbar-item" >Login</router-link>
                 </a>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </nav>
   </nav>
