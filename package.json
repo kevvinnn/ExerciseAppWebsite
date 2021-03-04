@@ -2,6 +2,9 @@
   "name": "exerciseappwebsite",
   "version": "1.0.0",
   "description": "The server package for our application",
+  "main": "index.js",
+  "author": "kevin fields <fieldskevin001@gmail.com>",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node your-script.js",
