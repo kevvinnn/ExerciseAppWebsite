@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The server package for our application",
   "scripts": {
+    "start": "node your-script.js",
     "dev": "nodemon --watch server server/index.js",
     "run": "node server/index.js"
   },
