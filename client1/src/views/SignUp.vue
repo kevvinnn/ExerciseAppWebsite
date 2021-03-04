@@ -1,17 +1,16 @@
 <template>
+<div class = "columns">
+<form class = "box">
 <div class = "signup">
- <h1 class="title">Sign Up</h1>
 <div class="field">
-  <label class="label">Name</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" type="text" placeholder="Name">
   </div>
 </div>
 
 <div class="field">
-  <label class="label">Username</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input" type="text" placeholder="Text input" >
+    <input class="input" type="text" placeholder="Username" >
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -19,7 +18,6 @@
 </div>
 
 <div class="field">
- <label class="label">Password</label>
   <p class="control has-icons-left">
     <input class="input" type="password" placeholder="Password">
     <span class="icon is-small is-left">
@@ -29,7 +27,6 @@
 </div>
 
 <div class="field">
-  <label class="label">Email</label>
   <div class="control has-icons-left has-icons-right">
     <input class="input" type="email" placeholder="Email input" value="">
     <span class="icon is-small is-left">
@@ -46,6 +43,8 @@
   </p>
 </div>
 </div>
+</form>
+</div>
 </template>
 
 <script>
@@ -55,5 +54,7 @@ export default {
 </script>
 
 <style>
-
+div{
+padding-bottom: 10px;
+}
 </style>

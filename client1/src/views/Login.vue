@@ -1,6 +1,7 @@
 <template>
+<div class = "columns">
+  <form class = "box">
   <div class = "login">
-      <h1 class="title">Login</h1>
       <div class="field">
   <p class="control has-icons-left has-icons-right">
     <input class="input" type="email" placeholder="Email">
@@ -28,6 +29,8 @@
   </p>
 </div>
   </div>
+  </form>
+</div>
 </template>
 
 <script>

@@ -5,8 +5,16 @@
           <a class="navbar-item" href="/">
             <i class="fas fa-dumbbell"></i>
           </a>
+
+
+           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="{ 'is-active': isActive}" @click.prevent="isActive = !isActive">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-menu" :class="{ 'is-active': isActive}">
           <div class="navbar-start">
 
           <router-link to="/" class="navbar-item" >Home</router-link>
@@ -16,24 +24,25 @@
         </div>
       
           <div class="navbar-end">
-              <div class="buttons">
-                <a class="button is-light">
-                  <router-link to="/signup" class="navbar-item" >Sign Up</router-link>
-                </a>
-                <a class="button is-light">
-                  <router-link to="/login" class="navbar-item" >Login</router-link>
-                </a>
+              <div class = "navbar-item">
+                <login-badge />
               </div>
             </div>
           </div>
-        </div>
       </nav>
   </nav>
 </template>
 
 <script>
-export default {
 
+import LoginBadge from './LoginBadge';
+export default {
+  data: ()=> ({
+    isActive: false
+  }),
+  components: {
+    LoginBadge
+  }
 }
 </script>
 

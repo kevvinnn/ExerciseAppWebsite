@@ -1,6 +1,6 @@
 <template>
+<div class = "columns">
   <div class = "workouts">
-    <h1 class="title">Find A Workout That Works For You!</h1>
   <form class = "box">
   <div class="control">
    <input class="input" type="text" >
@@ -23,6 +23,7 @@
   </div>
   </form>
   </div>
+</div>
 </template>
 
 <script>

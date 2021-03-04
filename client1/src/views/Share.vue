@@ -1,6 +1,6 @@
 <template>
+<div class = "columns">
   <div class = "share">
-    <h1 class="title">Share Your Workouts and Progress!</h1>
     <form class = "box">
       <div class="control">
         <input class="input" type="text" placeholder="Name">
@@ -23,6 +23,7 @@
     </div>
     </form>
   </div>
+</div>
 </template>
 
 <script>
