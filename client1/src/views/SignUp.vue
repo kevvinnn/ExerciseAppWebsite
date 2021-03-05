@@ -1,5 +1,6 @@
 <template>
 <div class = "columns">
+  <div class = "column is-half">
 <form class = "box">
 <div class = "signup">
 <div class="field">
@@ -44,6 +45,7 @@
 </div>
 </div>
 </form>
+</div>
 </div>
 </template>
 

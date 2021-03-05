@@ -17,5 +17,6 @@ export default{
 </script>
 
 <style lang="scss">
-
+div{ padding: 10x ;
+}
 </style>

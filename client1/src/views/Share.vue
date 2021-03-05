@@ -1,7 +1,12 @@
 <template>
-<div class = "columns">
+<div class = "columns ">
+  <div class = "column is-one-quarter">
+    <friend-finder />
+  </div>
+  <div class = "column">
   <div class = "share">
     <form class = "box">
+      <h1>Share Progress</h1>
       <div class="control">
         <input class="input" type="text" placeholder="Name">
       </div>
@@ -23,11 +28,18 @@
     </div>
     </form>
   </div>
+  </div>
 </div>
+
+
+
 </template>
 
 <script>
+import FriendFinder from '../components/FriendFinder.vue'
+
 export default {
+  components: { FriendFinder },
 
 }
 </script>
