@@ -3,20 +3,20 @@
 
 const path = require('path');
 const express = require('express');
+
+const usersCtrl = requre('./controllers/users');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
 app
     .use(express.static('./docs'))
-    .get('/', (req, res) => {
-    res.send('Hello World!')
-    })
-    .get('/purim', (req, res) => {
-        res.send('Lechaim, to life!');
-    })
-    // All the way at end of the pipeline. Return instead of not found
-    .get('*',(req, res) => {
-      res.sendFile(path.join(__dirname, '../docs/index.html'));
+
+    .use('/user', usersCtrl)
+
+    // All the way at the end of the pipeline. Return instead of not found
+    .get('*', (req, res) => {
+        res.sendFile( path.join(__dirname, '../docs/index.html' ) );
     })
 
 app.listen(port, () => {
