@@ -19,21 +19,21 @@
 </template>
 
 <script>
-import Session from "../models/Session";
+import Session, { Login, Logout } from "../models/Session";
 export default {
     data(){
-        return{
+        return {
             Session
         }
     },
     methods: {
-    login(){
-        this.Session.user = {name: "Kevin"}
-    },
-    logout(){
-        this.Session.user = null
+        login(){
+            Login();
+        },
+        logout(){
+            Logout();
+        }
     }
-}
 }
 </script>
 

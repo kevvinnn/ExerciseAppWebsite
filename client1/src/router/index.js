@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Session from '../models/Session'
 
 
 Vue.use(VueRouter)
@@ -46,5 +47,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach( (to, from, next) =>{
+  console.log({ from, to })
+  if(to.path == '/share' && !Session.user){
+   next('/login') 
+  }else{
+    next();
+  }
+} )
 
 export default router

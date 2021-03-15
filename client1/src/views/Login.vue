@@ -1,7 +1,7 @@
 <template>
 <div class = "columns">
   <div class = "column is-half">
-  <form class = "box">
+  <form  @submit.prevent="login">
   <div class = "login">
       <div class="field">
   <p class="control has-icons-left has-icons-right">
@@ -34,7 +34,13 @@
 </template>
 
 <script>
+import { Login } from "../models/Session";
 export default {
+      methods: {
+        login(){
+            Login();
+        }
+    }
 
 }
 </script>
