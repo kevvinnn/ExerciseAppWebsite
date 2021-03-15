@@ -4,7 +4,7 @@
 const path = require('path');
 const express = require('express');
 
-const usersCtrl = requre('./controllers/users');
+const usersCtrl = require('./controllers/users');
 
 const app = express();
 const port = process.env.PORT || 3000;
