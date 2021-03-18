@@ -10,10 +10,10 @@ const app = express.Router();
         })
         .get('/:post_id', (req, res)=> res.send(model.Get(req.params.post_id)))
         .post('/', (req, res)=> {
-        res.send(model.Add(req.body));
+            res.send(model.Add(req.body));
         })      
-        .patch('/:post_id', (req, res)=> 
-        res.send(model.Update(req.params.post_id,)
+        .patch('/:post_id', (req, res)=> res.send(
+            model.Update(req.params.post_id, req.body)
         ))
         .delete('/:post_id', (req, res)=> res.send(model.Delete(req.params.post_id)))
 
