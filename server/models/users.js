@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 const list = [
     { 
         firstname : 'Kevin',
@@ -15,6 +17,19 @@ module.exports.Add = (user)=> {
     if(!user.firstname){
         throw "First Name is Required"
     }
+    list.push(user);
+    return {...user, password: undefined};
+}
+module.exports.Register = async (user)=> {
+
+    const hash = await bcrypt.hash(user.password, 7);
+    
+    user.password = hash;
+
+    if(!user.firstname){
+        throw "First Name is Required"
+    }
+
     list.push(user);
     return {...user, password: undefined};
 }
