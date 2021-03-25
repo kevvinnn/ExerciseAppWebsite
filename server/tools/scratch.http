@@ -1,0 +1,26 @@
+http://localhost:3000/user
+###
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "firstname": "joe",
+    "lastname": "biden",
+    "handle": "@p",
+    "pic": "https://bulma.io/images/placeholders/96x96.png",
+    "password": "b"
+}
+
+###
+
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "firstname": "joe",
+    "lastname": "biden",
+    "handle": "@p",
+    "pic": "https://bulma.io/images/placeholders/96x96.png",
+    "password": "b"
+}

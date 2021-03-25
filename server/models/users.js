@@ -39,3 +39,10 @@ module.exports.Delete = (user_id)=> {
     list.splice(user_id, 1);
     return user;
 }
+
+module.exports.Login = (handle, password) => {
+    const user = list.find(x=> x.handle == handle && x.password == password);
+    if(!user) throw "Wrong Username or Password";
+
+    return user;
+}
