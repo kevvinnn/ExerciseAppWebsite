@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS;
@@ -26,7 +26,7 @@ module.exports.Add = (user)=> {
 }
 module.exports.Register = async (user)=> {
 
-    const hash = await bcrypt.hash(user.password, +SALT_ROUNDS);
+    const hash = await bcryptjs.hash(user.password, +SALT_ROUNDS);
     
     user.password = hash;
 
@@ -64,7 +64,7 @@ module.exports.Login =  async (handle, password) => {
     const user = list.find(x=> x.handle == handle);
     if(!user) throw "Sorry there is no user";
 
-    if( ! await bcrypt.compare(password, user.password)){
+    if( ! await bcryptjs.compare(password, user.password)){
         throw "wrong password";
     }
 
