@@ -1,8 +1,12 @@
 
 const path = require('path');
 const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 
+const { LoginRequire } = require('./controllers/security');
 const usersCtrl = require('./controllers/users');
+const usersModel = require('./controllers/users')
 const postsCtrl = require('./controllers/posts');
 
 const app = express();
@@ -12,8 +16,15 @@ app
     .use(express.json())
     .use(express.static('./docs'))
 
+    .use((req, res, next)=>{
+
+      const token = req.headers.authorization?.split(' ')[1];
+      req.user = token && usersModel.FromJWT(token);
+      next();
+    })
+
     .use('/user', usersCtrl)
-    .use('/posts', postsCtrl)
+    .use('/posts', LoginRequire, postsCtrl)
 
     // All the way at the end of the pipeline. Return instead of not found
     .get('*', (req, res) => {

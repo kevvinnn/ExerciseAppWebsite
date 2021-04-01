@@ -1,15 +1,16 @@
 const express = require('express');
 const model = require('../models/users');
+const { LoginRequire } = require('./security');
 
 const app = express.Router();
 
     app
-        .get('/', (req, res)=> {
+        .get('/', LoginRequire, (req, res)=> {
         res.send(model.GetAll());
         console.log(req.headers);
         })
-        .get('/:user_id', (req, res)=> res.send(model.Get(req.params.user_id)))
-        .post('/', (req, res)=> {
+        .get('/:user_id', LoginRequire, (req, res)=> res.send(model.Get(req.params.user_id)))
+        .post('/', LoginRequire, (req, res)=> {
             res.send(model.Add(req.body));
         })
         .post('/register', (req, res, next)=> {
@@ -18,9 +19,11 @@ const app = express.Router();
             .catch(next);
         })
         .post('/login', (req, res) => {
-            res.send(model.Login(req.body.handle, req.body.password))
+            model.Login(req.body.handle, req.body.password)
+            .then(user=>res.send(user))
+            .catch(next);
         })
-        .patch('/:user_id', (req, res)=> res.send(model.Update(req.params.user_id,{firstname: req.body.firstname,lastname: req.body.lastname,handle: req.body.handle,pic: req.body.pic,})))
-        .delete('/:user_id', (req, res)=> res.send(model.Delete(req.params.user_id)))
+        .patch('/:user_id', LoginRequire, (req, res)=> res.send(model.Update(req.params.user_id,{firstname: req.body.firstname,lastname: req.body.lastname,handle: req.body.handle,pic: req.body.pic,})))
+        .delete('/:user_id', LoginRequire, (req, res)=> res.send(model.Delete(req.params.user_id)))
 
 module.exports = app;
