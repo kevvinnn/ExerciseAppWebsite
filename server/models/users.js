@@ -11,7 +11,19 @@ const list = [
         handle: '@Kevin',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
         password: 'Piccolo11',
+        isAdmin: true,
+        following: [{handle: '@mike', isApproved:true }]
+    },
+    {
+        firstname : 'Mike',
+        lastname: 'Formisano',
+        handle: '@mike',
+        pic: 'https://bulma.io/images/placeholders/96x96.png',
+        password: 'racecar',
+        isAdmin: false,
+        following: [{handle: '@Kevin', isApproved:true}]
     }
+
 ];
 
 module.exports.GetAll = ()=> list;
@@ -72,7 +84,7 @@ module.exports.Login =  async (handle, password) => {
 
     const token = jwt.sign(data, JWT_SECRET)
 
-    return {user, token};
+    return {user: data, token};
 }
 
 module.exports.FromJWT = async (token) =>{

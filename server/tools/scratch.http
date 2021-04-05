@@ -14,13 +14,29 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/user/login
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "handle": "@p",
+    "password": "b"
+}
+###
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "handle": "@Kevin",
+    "password": "Piccolo11"
+}
+###
+POST http://localhost:3000/user/register
 Content-Type: application/json
 
 {
     "firstname": "joe",
     "lastname": "biden",
     "handle": "@p",
-    "pic": "https://bulma.io/images/placeholders/96x96.png",
     "password": "b"
 }
