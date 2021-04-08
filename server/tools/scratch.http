@@ -40,3 +40,11 @@ Content-Type: application/json
     "handle": "@p",
     "password": "b"
 }
+
+###
+GET  http://localhost:3000/users/localhost:3000/users/GetByHandle
+Content-Type: application/json
+
+{
+    "handle": "@p"
+}
