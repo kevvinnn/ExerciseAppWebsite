@@ -15,7 +15,7 @@ export function api(url, data){
                 'Accept': 'application/json',
             },
             body: JSON.stringify(data) // body data type must match "Content-Type" header
-        }).then(x=> x.json());
+        });
     }else{
         promise = fetch(API_ROOT + url);
     }
