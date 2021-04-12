@@ -30,6 +30,10 @@
            <div class="content-item" v-for="(post, i) in posts" :key="i">
                 <post-layout :post="post" />
               </div>
+
+            <div class="content-item" v-for="(post, i) in posts" :key="i">
+                <post-layout :post="post" @delete="deletePost(i)" />
+              </div>
           </div>
   </div>
 
@@ -47,31 +51,27 @@
 <script>
 import FriendFinder from '../components/FriendFinder.vue';
 import PostLayout from '../components/PostLayout.vue';
+import { GetMyPosts } from "../models/Posts";
 
 export default {
   data: ()=> ({
     newPost: {
       user: { }
     },
-    posts: [
-      {
-        src: "https://bulma.io/images/placeholders/1280x960.png",
-        caption: "hi",
-        time: Date(),
-        user: {
-          name: "john",
-          username: "@john",
-          alt: "https://bulma.io/images/placeholders/96x96.png",
-        }
-      }
-    ]
+    posts: []
   }),
+  async mounted() {
+        this.posts = await GetMyPosts();
+  },
   components: { FriendFinder, PostLayout },
 
   methods: {
     addPost(){
             this.posts.unshift(this.newPost);
             this.newPost = { user: {} }
+        },
+        deletePost(i){
+            this.posts.splice(i, 1);
         }
   }
 

@@ -9,7 +9,7 @@
                 </a>
               </div>
               <div v-else>
-                  Hello Kevin
+                  Hello {{Session.user.firstname}} {{Session.user.lastname}} {{Session.user.handle}}
                   <a @click="logout">
                       logout
                   </a>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Session, { Login, Logout } from "../models/Session";
+import Session, { Logout } from "../models/Session";
 export default {
     data(){
         return {
@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         login(){
-            Login();
+            this.$router.push('Login')
         },
         logout(){
             Logout();
