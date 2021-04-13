@@ -9,7 +9,7 @@ const app = express.Router();
             if(req.user.isAdmin){
             res.send(model.GetAll());
             }else{
-                res.send(model.GetWAll(req.user.handle));    
+                res.send(model.GetWall(req.user.handle));    
             }
         })
         .get('/:post_id', (req, res)=>{

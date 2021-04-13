@@ -18,12 +18,12 @@ const app = express.Router();
             .then(user=> res.send(user))
             .catch(next);
         })
-        .post('/login', (req, res) => {
+        .post('/login', (req, res, next) => {
             model.Login(req.body.handle, req.body.password)
             .then(user=>res.send(user))
             .catch(next);
         })
-        .patch('/:user_id', LoginRequire, (req, res)=> res.send(model.Update(req.params.user_id,{firstname: req.body.firstname,lastname: req.body.lastname,handle: req.body.handle,pic: req.body.pic,})))
+        .patch('/:user_id', LoginRequire, (req, res)=> res.send(model.Update(req.params.user_id, req.body)))
         .delete('/:user_id', LoginRequire, (req, res)=> res.send(model.Delete(req.params.user_id)))
 
 module.exports = app;

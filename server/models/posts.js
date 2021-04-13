@@ -20,7 +20,7 @@ module.exports.GetAll = ()=>{
     return listWithOwner();
 }
 
-module.exports.GetWAll = (handle)=> {
+module.exports.GetWall = (handle)=> {
     return listWithOwner().filter(post=> post.username == handle);
 };
 
@@ -30,7 +30,7 @@ module.exports.GetFeed = (handle)=> listWithOwner()
 module.exports.Get = (post_id)=> list[post_id];
 module.exports.Add = (post)=> {
     if(!post.username){
-        throw "Post must have an owner"
+        throw {code: 422, msg: "Post must have an Owner"}
     }
     list.push(post);
     return {...post};

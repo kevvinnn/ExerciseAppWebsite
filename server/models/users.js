@@ -31,7 +31,7 @@ module.exports.Get = (user_id)=> list[user_id];
 module.exports.GetByHandle = (handle)=> ({ ...list.find( (x, i) => x.handle == handle), password: undefined });
 module.exports.Add = (user)=> {
     if(!user.firstname){
-        throw "First Name is Required"
+        throw { code: 422, msg: "First Name is required" }
     }
     list.push(user);
     return {...user, password: undefined};
@@ -43,7 +43,7 @@ module.exports.Register = async (user)=> {
     user.password = hash;
 
     if(!user.firstname){
-        throw "First Name is Required"
+        throw { code: 422, msg: "First Name is required" }
     }
 
     list.push(user);
