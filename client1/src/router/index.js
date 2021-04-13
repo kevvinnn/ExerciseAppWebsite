@@ -21,14 +21,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "share" */ '../views/Share.vue')
   },
   {
-  path: '/workouts',
-  name: 'Workouts',
-  component: () => import(/* webpackChunkName: "workouts" */ '../views/Workouts.vue')
+   path: '/workouts',
+    name: 'Workouts',
+    component: () => import(/* webpackChunkName: "workouts" */ '../views/Workouts.vue')
   },
   {
-  path: '/myprofile',
-  name: 'MyProfile',
-  component: () => import(/* webpackChunkName: "myprofile" */ '../views/MyProfile.vue')
+    path: '/myprofile',
+    name: 'MyProfile',
+    component: () => import(/* webpackChunkName: "myprofile" */ '../views/MyProfile.vue')
   },
   {
     path: '/signup',

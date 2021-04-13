@@ -74,10 +74,10 @@ module.exports.Delete = (user_id)=> {
 module.exports.Login =  async (handle, password) => {
     console.log({handle, password})
     const user = list.find(x=> x.handle == handle);
-    if(!user) throw "Sorry there is no user";
+    if(!user) throw { code: 401, msg: "Sorry there is no user with that handle" };
 
     if( ! await bcryptjs.compare(password, user.password)){
-        throw "wrong password";
+        throw { code: 401, msg: "Wrong Password" };
     }
 
     const data = {...user, password: undefined};

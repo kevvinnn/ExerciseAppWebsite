@@ -26,7 +26,7 @@ app
       next();
     })
 
-    .use('/user', usersCtrl)
+    .use('/users', usersCtrl)
     .use('/posts', LoginRequire, postsCtrl)
     
 
