@@ -5,7 +5,7 @@
   <div class = "login">
       <div class="field">
   <p class="control has-icons-left has-icons-right">
-    <input class="input" type="text" placeholder="handle" v-model="handle">
+    <input class="input" type="text" placeholder="Handle" v-model="handle">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>

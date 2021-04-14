@@ -22,6 +22,15 @@ const list = [
         password: 'racecar',
         isAdmin: false,
         following: [{handle: '@Kevin', isApproved:true}]
+    },
+    {
+        firstname : 'Erik',
+        lastname: 'Hagenah',
+        handle: '@erik',
+        pic: 'https://bulma.io/images/placeholders/96x96.png',
+        password: 'scott',
+        isAdmin: false,
+        following: [{handle: '@Kevin', isApproved:true}]
     }
 
 ];
