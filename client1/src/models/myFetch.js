@@ -1,16 +1,15 @@
 import Session, { toastError } from "./Session";
 
 export const API_ROOT = process.env.VUE_APP_API_ROOT;
-console.log({Session})
+
 export function api(url, data, method){
 
     let promise;
-    console.log({Session})
     const headers = { authorization: `bearer ${Session.token}` };
 
     if(data){
         promise =  fetch(API_ROOT + url, {
-            method: method ??'POST', // *GET, POST, PUT, DELETE, etc.
+            method: method ?? 'POST', // *GET, POST, PUT, DELETE, etc.
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
             headers: {
                 ...headers,

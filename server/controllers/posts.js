@@ -21,6 +21,11 @@ const app = express.Router();
             }
          
         })
+        .get('/myfeed', (req, res)=>{
+
+            res.send( model.GetFeed(req.user.handle) );
+
+        }  )
         
         .post('/', (req, res)=> {
             req.body.username = req.user.handle

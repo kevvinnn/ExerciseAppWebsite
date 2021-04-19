@@ -8,6 +8,7 @@ import MyProfile from '@/views/MyProfile'
 import SignUp from '@/views/SignUp'
 import Login from '@/views/Login'
 import Users from '@/views/Users'
+import MyFeed from '@/views/MyFeed'
 
 
 
@@ -21,6 +22,7 @@ const routes = [
   {path: '/signup', name: 'SignUp', component: SignUp},
   {path: '/login', name: 'Login', component: Login},
   {path: '/users', name: 'Users', component: Users},
+  {path: '/myfeed', name: 'MyFeed', component: MyFeed},
 ]
 
 const router = new VueRouter({
