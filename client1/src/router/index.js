@@ -2,49 +2,25 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Session from '../models/Session'
+import Workouts from '@/views/Workouts'
+import Share from '@/views/Share'
+import MyProfile from '@/views/MyProfile'
+import SignUp from '@/views/SignUp'
+import Login from '@/views/Login'
+import Users from '@/views/Users'
+
 
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/share',
-    name: 'Share',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "share" */ '../views/Share.vue')
-  },
-  {
-   path: '/workouts',
-    name: 'Workouts',
-    component: () => import(/* webpackChunkName: "workouts" */ '../views/Workouts.vue')
-  },
-  {
-    path: '/myprofile',
-    name: 'MyProfile',
-    component: () => import(/* webpackChunkName: "myprofile" */ '../views/MyProfile.vue')
-  },
-  {
-    path: '/signup',
-    name: 'SignUp',
-    component: () => import(/* webpackChunkName: "signup" */ '../views/SignUp.vue')
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
-  },
-  {
-    path: '/users',
-    name: 'Users',
-    component: () => import(/* webpackChunkName: "users" */ '../views/Users.vue')
-  },
+  {path: '/', name: 'Home', component: Home},
+  {path: '/share', name: 'Share', component: Share},
+  {path: '/workouts', name: 'Workouts', component: Workouts},
+  {path: '/myprofile', name: 'MyProfile', component: MyProfile},
+  {path: '/signup', name: 'SignUp', component: SignUp},
+  {path: '/login', name: 'Login', component: Login},
+  {path: '/users', name: 'Users', component: Users},
 ]
 
 const router = new VueRouter({
@@ -56,7 +32,8 @@ const router = new VueRouter({
 router.beforeEach( (to, from, next) =>{
   console.log({ from, to })
   if(to.path == '/share' && !Session.user){
-   next('/login') 
+    Session.nextRoute = to;
+    next('/login') 
   }else{
     next();
   }
