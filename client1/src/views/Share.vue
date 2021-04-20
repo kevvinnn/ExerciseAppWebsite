@@ -66,7 +66,7 @@ export default {
   components: { FriendFinder, PostLayout },
 
   methods: {
-    addPost(){
+        addPost(){
             this.posts.unshift(this.newPost);
             this.newPost = { user: {} }
         },
