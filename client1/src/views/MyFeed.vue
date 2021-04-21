@@ -57,7 +57,7 @@ import Session from "../models/Session";
 export default {
   data: ()=> ({
     newPost: {
-      user: {}
+      user: {} //Session.user 
     },
     posts: []
   }),
