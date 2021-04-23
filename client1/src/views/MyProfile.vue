@@ -1,25 +1,35 @@
 <template>
   <div class = "columns">
-    <div class = "column is-one-third">
+    <div class = "column">
       <form class = "box"> 
+        <div class="title">
         Account Info
-        <input class="input" type="text" placeholder="Username" >
-        <input class="input" type="text" placeholder="Email">
-        <input class="input" type="text" placeholder="Name">
-        <input class="input" type="text" placeholder="gender">
-        <input class="input" type="text" placeholder="Phone">
-        <input class="input" type="text" placeholder="Birthday">
-      </form>   
+        </div>
+        <div class="user">
+        <h1> First Name: {{firstname}}</h1>
+        </div>
+        <div class="user">
+        <h1>Last Name: {{lastname}}</h1>
+        </div>
+        <div class="user">
+        <h1>Username: {{handle}}</h1>
+        </div>
+        <div class="user">
+        <h1>Following: {{following}}</h1>
+        </div>
+        <div class="user">
+        <h1>Gender: {{gender}}</h1>
+        </div>
+      </form>  
     </div> 
-        <div class = "column is-one-third">
+        <div class = "column ">
           <form class = "box">
             Account Settings
-            <div class="control">
-            <label class="radio">
-            <input type="radio" name="answer">
-            Private Account
-           </label>
-            </div>
+            <b-field>
+            <b-switch :value="false">
+                Private Account
+            </b-switch>
+            </b-field>
             Language
             <div class="select is-normal">
             <select>
@@ -32,37 +42,38 @@
             </div>
           </form>
     </div> 
-        <div class = "column is-one-third">
-          <article class="panel is-primary">
-            <p class="panel-heading">
-              History
-            </p>
-            <p class="panel-tabs">
-              <a>All History</a>
-              <a>Recent History</a>
-            </p>
-            <div class="panel-block">
-              <p class="controlhas-icons-left">
-                <input class="input is-primary" type="text" placeholder="Search">
-              </p>
-            </div>
-            <a class="panel-block">
-            </a>
-            <a class="panel-block">
-            </a>
-            <a class="panel-block">
-            </a>
-          </article>
-    </div> 
+        
   </div>
 </template>
 
 <script>
+import Session from "../models/Session";
 export default {
-
+  data() {
+    return {
+      firstname: Session.user.firstname,
+      lastname: Session.user.lastname,
+      handle: Session.user.handle,
+      following: Session.user.following.handle,
+      gender: Session.user.gender,
+    }
+  }
 }
 </script>
 
 <style>
-
+.user{
+  background: rgb(247, 247, 247);
+  margin: 5px;
+  padding: 10x 20px;
+  cursor: pointer;
+  font-size: medium;
+  border-right: 5px solid mediumblue;
+}
+.title{
+  font-size:large;
+  margin: 5px;
+  padding: 10x 20px;
+  cursor: pointer;
+}
 </style>

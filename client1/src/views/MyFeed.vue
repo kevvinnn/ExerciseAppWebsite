@@ -67,7 +67,7 @@ export default {
   components: { FriendFinder, PostLayout },
 
   methods: {
-    async addPost(){
+        async addPost(){
             const post = await AddPost(this.newPost)
             this.posts.unshift(post);
             this.newPost = { user: Session.user }

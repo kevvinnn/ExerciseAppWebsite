@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <h1 class="title">Welcome</h1>
-    
+    <figure>
+      <img src="https://icon-library.com/images/exercise-icon/exercise-icon-1.jpg" class="center"/>
+    </figure>
   </div>
 </template>
 
@@ -18,4 +19,16 @@ export default {
     
   }
 }
+
+
 </script>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+
+
