@@ -1,59 +1,58 @@
 <template>
-<div class = "columns">
-  <div class = "column is-half">
-  <div class = "workouts">
-  <form class = "box">
-  <div class="control">
-   <input class="input" type="text" >
-   <div class="field">
-     <br>
-  <p class="control">
-    <button class="button is-primary">
-      Search
-    </button>
-  </p>
-</div>
-   <div class="select">
-  <select>
-    <option>Core</option>
-    <option>Upper Body</option>
-    <option>Lower Body</option>
-    <option>Cardio</option>
-  </select>
- </div>
+<form>
+<div class="columns">
+<div class="column">
+<div class = "make">
+      <form @submit.prevent="addWorkout">
+      <h1>Create Workout</h1>
+      <div class="control">
+        <input class="input" type="text" placeholder="Type" v-model="newWorkout.type">
+      </div>
+      <div class="control">
+       <input class="input" type="text" placeholder="Routine" v-model="newWorkout.routine">
+      </div>
+      <div class="control">
+       <input class="input" type="text" placeholder="Frequency" v-model="newWorkout.frequency">
+      </div>
+      <div class="control">
+       <input class="input" type="text" placeholder="Image" v-model="newWorkout.image">
+      </div>
+      <div class="field">
+       <p class="control">
+        <button class="button is-primary">
+          Make Workout
+        </button>
+       </p>
+      </div>
+     </form>
   </div>
-  </form>
+</div>
+<div class = "column">
+  <div class="content" v-for="(workouts, i) in workouts" :key="i">
+  <workout-layout :workout="workout" />
+  </div>
   </div>
 </div>
-<div class = "column is-half">
-  <form class = "box">
-    <article class="panel is-link">
-  <p class="panel-heading">
-    My Workouts
-  </p>
-  <p class="panel-tabs">
-    <a>Saved Workouts</a>
-    <a>Workout Progress</a>
-  </p>
-  <div class="panel-block">
-    <p class="control has-icons-left">
-      <input class="input is-link" type="text" placeholder="Search">
-      <span class="icon is-left">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </span>
-    </p>
-  </div>
-  <a class="panel-block">
-  </a>
-    </article>
-  </form>
-</div>
-</div>
+</form>
 </template>
 
 <script>
-export default {
+import WorkoutLayout from '../components/WorkoutLayout.vue';
 
+export default {
+  components: { WorkoutLayout },
+  data: ()=> ({
+    newWorkout: {
+      workout: {}
+    },
+    workouts: []
+  }),
+  methods: {
+    addWorkout(){
+      this.workouts.unshift(this.newWorkout);
+      this.newWorkout = { workout: {} }
+    },
+  }
 }
 </script>
 

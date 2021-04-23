@@ -10,7 +10,7 @@ const list = [
         lastname: 'Fields',
         handle: '@Kevin',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
-        password: 'Piccolo11',
+        password: '$2a$08$0qZ/dZN7pAHqtbOUNg7g4.qN.XAgoPmSrTTzHwBazviBKNeBk3WSG',
         isAdmin: true,
         following: [{handle: '@mike', isApproved:true }]
     },
@@ -19,7 +19,7 @@ const list = [
         lastname: 'Formisano',
         handle: '@mike',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
-        password: 'racecar',
+        password: '$2a$08$hT9ZO1ejvvU.c6WPCtZECeG73ePWfB25Yocx4dKtUWOMqhZc1gXlG',
         isAdmin: false,
         following: [{handle: '@Kevin', isApproved:true}]
     },
@@ -28,7 +28,7 @@ const list = [
         lastname: 'Hagenah',
         handle: '@erik',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
-        password: 'scott',
+        password: '$2a$08$BOXh9s8acJ/.OXz01U6tT.iIOcvA.Z8IJyVS7Ldhe0fur67U6ICZ6',
         isAdmin: false,
         following: [{handle: '@Kevin', isApproved:true}]
     }

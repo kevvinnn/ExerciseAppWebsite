@@ -8,7 +8,23 @@ const list = [
         alt: "https://bulma.io/images/placeholders/96x96.png",
         username: "@john",
         isPublic: true,
-    }
+    },
+    { 
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD18P_SdKsm7WQaz5WU_dFCmXcXs8aidBQLg&usqp=CAU",
+        caption: "I LOVE EXERCISING!",
+        time: Date(),
+        alt: "https://bulma.io/images/placeholders/96x96.png",
+        username: "@Kevin",
+        isPublic: true,
+    },
+    { 
+        src: "https://media2.s-nbcnews.com/i/newscms/2021_15/1702036/exercise-covid-19-study-te-main-210414_016fcb27f9cd9da2d491ce36c7064cb3.jpg",
+        caption: "Great Lift!",
+        time: Date(),
+        alt: "https://bulma.io/images/placeholders/96x96.png",
+        username: "@mike",
+        isPublic: true,
+    },
 ];
 
 const listWithOwner = ()=> list.map((x, i) => ({ 

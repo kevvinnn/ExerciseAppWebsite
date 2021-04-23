@@ -9,7 +9,7 @@
                 </a>
               </div>
               <div v-else>
-                  Hello {{Session.user.firstname}} {{Session.user.lastname}} {{Session.user.handle}}
+                   {{Session.user.handle}}
                   <a @click="logout">
                       logout
                   </a>

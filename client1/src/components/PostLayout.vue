@@ -2,14 +2,18 @@
   <div class="card">
   <div class="card-image">
     <button class="delete is-pulled-right" @click.prevent="$emit('delete')"></button>
-    <figure class="image is-3by3">
+    <div class="content">
+      <div class="more-content">
+    <figure class="image is-125x125">
       <img :src="post.src" >
     </figure>
+      </div>
+    </div>
   </div>
   <div class="card-content">
     <div class="media">
       <div class="media-left">
-        <figure class="image is-48x48">
+        <figure class="image">
           <img :src ="post.user.alt">
         </figure>
       </div>
@@ -37,6 +41,4 @@ export default {
 </script>
 
 <style>
-
-
 </style>

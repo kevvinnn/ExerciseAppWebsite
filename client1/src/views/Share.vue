@@ -31,7 +31,7 @@
                 <post-layout :post="post" />
               </div>
 
-            <div class="content-item" v-for="(post, i) in posts" :key="i">
+            <div class="content-item" v-for="(post, i) in posts2" :key="'A' + i">
                 <post-layout :post="post" @delete="deletePost(i)" />
               </div>
           </div>

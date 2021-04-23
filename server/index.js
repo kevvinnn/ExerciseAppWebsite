@@ -7,8 +7,9 @@ dotenv.config();
 
 const { LoginRequire } = require('./controllers/security');
 const usersCtrl = require('./controllers/users');
-const usersModel = require('./controllers/users')
+const usersModel = require('./models/users');
 const postsCtrl = require('./controllers/posts');
+const workoutsCtrl = require('./controllers/workouts')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,6 +29,7 @@ app
 
     .use('/users', usersCtrl)
     .use('/posts', LoginRequire, postsCtrl)
+    .use('/workouts', workoutsCtrl)
     
 
     // All the way at the end of the pipeline. Return instead of not found

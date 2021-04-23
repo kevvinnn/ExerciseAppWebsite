@@ -1,7 +1,8 @@
-http://localhost:3000/user
+GET http://localhost:3000/users
+authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJqb2UiLCJsYXN0bmFtZSI6ImJpZGVuIiwiaGFuZGxlIjoiQHAiLCJpYXQiOjE2MTkxMjE5NDZ9.62NKUACHZiSr9sijiF3RYgKqMIuhWXE6JcrmxvvQtw0
 ###
 
-POST http://localhost:3000/user
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
@@ -27,22 +28,22 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "handle": "@Kevin",
-    "password": "Piccolo11"
+    "handle": "@p",
+    "password": "racecar"
 }
 ###
-POST http://localhost:3000/user/register
+POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
     "firstname": "joe",
     "lastname": "biden",
     "handle": "@p",
-    "password": "b"
+    "password": "Piccolo11"
 }
 
 ###
-GET  http://localhost:3000/users/localhost:3000/users/GetByHandle
+GET  http://localhost:3000/users/login
 Content-Type: application/json
 
 {

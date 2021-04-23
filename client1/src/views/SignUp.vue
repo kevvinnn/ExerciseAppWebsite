@@ -5,13 +5,13 @@
 <div class = "signup">
 <div class="field">
   <div class="control">
-    <input class="input" type="text" placeholder="Name">
+    <input class="input" type="text" placeholder="Firstname">
   </div>
 </div>
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
-    <input class="input" type="text" placeholder="Username" >
+    <input class="input" type="text" placeholder="Lastname" >
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -20,7 +20,7 @@
 
 <div class="field">
   <p class="control has-icons-left">
-    <input class="input" type="password" placeholder="Password">
+    <input class="input" type="handle" placeholder="Handle">
     <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
     </span>
@@ -29,7 +29,7 @@
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
-    <input class="input" type="email" placeholder="Email input" value="">
+    <input class="input" type="password" placeholder="Password" value="">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>

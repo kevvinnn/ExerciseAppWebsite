@@ -3,7 +3,7 @@
     <div class = "column is-one-third">
       <form class = "box"> 
         Account Info
-        <input class="input" type="text" placeholder="Username">
+        <input class="input" type="text" placeholder="Username" >
         <input class="input" type="text" placeholder="Email">
         <input class="input" type="text" placeholder="Name">
         <input class="input" type="text" placeholder="gender">
