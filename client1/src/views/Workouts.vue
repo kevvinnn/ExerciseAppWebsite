@@ -14,9 +14,6 @@
       <div class="control">
        <input class="input" type="text" placeholder="Frequency" v-model="newWorkout.frequency">
       </div>
-      <div class="control">
-       <input class="input" type="text" placeholder="Image" v-model="newWorkout.image">
-      </div>
       <div class="field">
        <p class="control">
         <button class="button is-primary">
@@ -43,14 +40,12 @@ export default {
   components: { WorkoutLayout },
   data: ()=> ({
     newWorkout: {
-      workout: {}
     },
     workouts: []
   }),
   methods: {
     addWorkout(){
       this.workouts.unshift(this.newWorkout);
-      this.newWorkout = { workout: {} }
     },
   }
 }

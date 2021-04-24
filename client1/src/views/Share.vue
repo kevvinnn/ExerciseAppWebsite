@@ -5,13 +5,14 @@
   </div>
   <div class = "column">
   <div class = "share">
+    <form class = "box">
       <form @submit.prevent="addPost">
-      <h1>Share Progress</h1>
+      <h1 class="title">Share Progress</h1>
       <div class="control">
-        <input class="input" type="text" placeholder="Name" v-model="newPost.user.name">
+        <input class="input" type="text" placeholder="Name" v-model="newPost.user.firstname">
       </div>
       <div class="control">
-       <input class="input" type="text" placeholder="@Username" v-model="newPost.user.username">
+       <input class="input" type="text" placeholder="@Username" v-model="newPost.user.handle">
       </div>
       <div class="control">
        <input class="input" type="text" placeholder="Image Source" v-model="newPost.src">
@@ -26,6 +27,7 @@
         </button>
        </p>
       </div>
+     </form>
      </form>
            <div class="content-item" v-for="(post, i) in posts" :key="i">
                 <post-layout :post="post" />
@@ -82,5 +84,12 @@ export default {
 div {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.title{
+  background: rgb(247, 247, 247);
+  margin: 5px;
+  padding: 10x 20px;
+  cursor: pointer;
+  font-size: medium;
 }
 </style>

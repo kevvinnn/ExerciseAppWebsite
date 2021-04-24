@@ -14,12 +14,12 @@
     <div class="media">
       <div class="media-left">
         <figure class="image">
-          <img :src ="post.user.alt">
+          <img :src ="post.alt">
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">{{post.user.name}}</p>
-        <p class="subtitle is-6">{{post.user.username}}</p>
+        <p class="title is-4">{{post.user.firstname}} {{post.user.lastname}}</p>
+        <p class="subtitle is-6">{{post.user.handle}}</p>
       </div>
     </div>
 

@@ -2,9 +2,6 @@
   <div class="box">
   <article class="media">
     <div class="media-left">
-      <figure class="image is-64x64">
-        <img :src="workout.image">
-      </figure>
     </div>
     <div class="media-content">
       <div class="content">

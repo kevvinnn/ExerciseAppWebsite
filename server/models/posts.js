@@ -6,7 +6,7 @@ const list = [
         caption: "hi",
         time: Date(),
         alt: "https://bulma.io/images/placeholders/96x96.png",
-        username: "@john",
+        username: "@erik",
         isPublic: true,
     },
     { 
