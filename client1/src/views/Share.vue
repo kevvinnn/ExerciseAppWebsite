@@ -9,12 +9,6 @@
       <form @submit.prevent="addPost">
       <h1 class="title">Share Progress</h1>
       <div class="control">
-        <input class="input" type="text" placeholder="Name" v-model="newPost.user.firstname">
-      </div>
-      <div class="control">
-       <input class="input" type="text" placeholder="@Username" v-model="newPost.user.handle">
-      </div>
-      <div class="control">
        <input class="input" type="text" placeholder="Image Source" v-model="newPost.src">
       </div>
       <div class="control">
@@ -53,14 +47,16 @@
 <script>
 import FriendFinder from '../components/FriendFinder.vue';
 import PostLayout from '../components/PostLayout.vue';
-import { GetMyPosts } from "../models/Posts";
+import { AddPost, DeletePost, GetMyPosts } from "../models/Posts";
+import Session from "../models/Session";
 
 export default {
   data: ()=> ({
     newPost: {
-      user: { }
+      user: Session.user 
     },
-    posts: []
+    posts: [],
+    posts2: []
   }),
   async mounted() {
         this.posts = await GetMyPosts();
@@ -68,12 +64,14 @@ export default {
   components: { FriendFinder, PostLayout },
 
   methods: {
-        addPost(){
-            this.posts.unshift(this.newPost);
-            this.newPost = { user: {} }
+        async addPost(){
+            const post = await AddPost(this.newPost)
+            this.posts.unshift(post);
+            this.newPost = { user: Session.user }
         },
-        deletePost(i){
-            this.posts.splice(i, 1);
+        async deletePost(i){
+                await DeletePost(i);
+                this.posts.splice(i, 1);
         }
   }
 

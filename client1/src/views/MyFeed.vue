@@ -57,7 +57,8 @@ export default {
     newPost: {
       user: Session.user 
     },
-    posts: []
+    posts: [],
+    posts2: []
   }),
   async mounted() {
         this.posts = await GetMyFeed();

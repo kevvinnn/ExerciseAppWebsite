@@ -12,10 +12,17 @@
         <h1>Last Name: {{lastname}}</h1>
         </div>
         <div class="user">
-        <h1>Username: {{handle}}</h1>
+        <h1>Handle: {{handle}}</h1>
         </div>
+        <div v-if="following">
         <div class="user">
         <h1>Following: {{following}}</h1>
+        </div>
+        </div>
+        <div v-else>
+          <div class="user">
+        <h1>Following: Nobody Yet!</h1>
+        </div>
         </div>
         <div class="user">
         <h1>Gender: {{gender}}</h1>
@@ -49,15 +56,17 @@
 <script>
 import Session from "../models/Session";
 export default {
-  data() {
-    return {
+  data(){
+    return{
+      Session,
+
       firstname: Session.user.firstname,
       lastname: Session.user.lastname,
       handle: Session.user.handle,
       following: Session.user.following.handle,
       gender: Session.user.gender,
-    }
   }
+}
 }
 </script>
 

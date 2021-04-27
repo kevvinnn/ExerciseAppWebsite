@@ -22,14 +22,17 @@
           <router-link to="/share"  class="navbar-item">Share</router-link>
           <router-link to="/workouts"  class="navbar-item">Workouts</router-link>
           <router-link to="/myprofile"  class="navbar-item">MyProfile</router-link>
-        </div>
-      
+          <div class="navbar-item" v-if="Session.user && Session.user.isAdmin===true">
+          <router-link to="/users"  class="navbar-item">Users</router-link>
+          </div>
+          </div>
           <div class="navbar-end">
               <div class = "navbar-item">
                 <login-badge />
               </div>
             </div>
           </div>
+
       </nav>
   </nav>
 </template>
@@ -37,9 +40,13 @@
 <script>
 
 import LoginBadge from './LoginBadge';
+import Session from '../models/Session'
 export default {
   data: ()=> ({
-    isActive: false
+    isActive: false,
+    Session,
+    user: Session.user,
+    isAdmin: false
   }),
   components: {
     LoginBadge

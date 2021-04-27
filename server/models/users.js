@@ -1,5 +1,6 @@
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const axios = require('axios').default;
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS;
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -75,6 +76,9 @@ module.exports.Update = (user_id, user)=> {
     if(user.pic){
         oldObj.pic = user.pic;
     }
+    if(user.gender){
+        oldObj.gender = user.gender;
+    }
     return {...oldObj, password: undefined};
 }
 module.exports.Delete = (user_id)=> {
@@ -97,6 +101,32 @@ module.exports.Login =  async (handle, password) => {
     const token = jwt.sign(data, JWT_SECRET)
 
     return {user: data, token};
+}
+
+module.exports.LoginFB = async (access_token) =>{
+    console.log({ access_token })
+
+    const userFB = await axios.get(`https://graph.facebook.com/v10.0/me?fields=first_name,last_name,email,picture&access_token=${access_token}`)
+    console.log(userFB.data);
+
+    // Get a verified email address from facebook
+    let user = list.find(x=> x.email == userFB.data.email);
+    if(!user) {
+        user = {
+            firstName: userFB.data.first_name,
+            lastName: userFB.data.last_name,
+            pic: userFB.data.picture.data.url,
+            email: userFB.data.email,
+            handle:  userFB.data.email
+        };
+        list.push(user);
+    }
+
+    const data = { ...user, password: undefined };
+
+    const token = jwt.sign(data, JWT_SECRET)
+
+    return { user: data, token };
 }
 
 module.exports.FromJWT = async (token) =>{

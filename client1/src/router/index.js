@@ -35,7 +35,13 @@ router.beforeEach( (to, from, next) =>{
   console.log({ from, to })
   if(to.path == '/share' && !Session.user){
     Session.nextRoute = to;
-    next('/login') 
+    next('/login')
+  }else if(to.path == '/myfeed' && !Session.user){
+      Session.nextRoute = to;
+      next('/login') 
+  }else if(to.path == '/myprofile' && !Session.user){
+      Session.nextRoute = to;
+      next('/login') 
   }else{
     next();
   }

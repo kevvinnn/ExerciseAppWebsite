@@ -23,6 +23,13 @@ const app = express.Router();
             .then(user=>res.send(user))
             .catch(next);
         })
+        .post('/loginFB', (req, res, next)=> { 
+
+            model.LoginFB(req.body.access_token)
+            .then(user=> res.send( user  ))
+            .catch(next);
+
+        })
         .patch('/:user_id', LoginRequire, (req, res)=> res.send(model.Update(req.params.user_id, req.body)))
         .delete('/:user_id', LoginRequire, (req, res)=> res.send(model.Delete(req.params.user_id)))
 

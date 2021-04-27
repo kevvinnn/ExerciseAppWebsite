@@ -26,6 +26,11 @@
     </button>
   </p>
 </div>
+<div>
+                  <button @click.prevent="loginFB" class="button is-primary">
+                    Login with Facebook
+                </button>
+</div>
   </div>
   </form>
 </div>
@@ -34,7 +39,7 @@
 </template>
 
 <script>
-import { Login } from "../models/Session";
+import { Login, LoginFB } from "../models/Session";
 export default {
     data: ()=>({
       handle: null,
@@ -43,9 +48,19 @@ export default {
       methods: {
         login(){
             Login(this.handle, this.password);
-        }
+        },
+        loginFB(){
+            /*global FB */
+            FB.login(function(response) {
+                console.log({response})
+                    if (response.status === 'connected') {
+                        LoginFB(response.authResponse.accessToken)
+                    } else {
+                        // The person is not logged into your webpage or we are unable to tell. 
+                    }
+            }, {scope: 'public_profile,email'});
     }
-
+      }
 }
 </script>
 
