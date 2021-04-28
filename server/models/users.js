@@ -35,7 +35,17 @@ const list = [
         isAdmin: false,
         following: {handle: '@Kevin', isApproved:true},
         gender: 'Male'
-    }
+    },
+    {
+        firstname : 'Liam',
+        lastname: 'Petri',
+        handle: '@liam',
+        pic: 'https://bulma.io/images/placeholders/96x96.png',
+        password: '$2a$08$rxraDHtxjIVntvFFndsu0uxE49m59g5ie9TDesM6cVauAUqQtYTDm',
+        isAdmin: false,
+        following: {handle: '@Kevin', isApproved:true},
+        gender: 'Female'
+    },
 
 ];
 

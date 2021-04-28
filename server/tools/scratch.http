@@ -28,7 +28,7 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "handle": "@p",
+    "handle": "@liam",
     "password": "racecar"
 }
 ###
@@ -39,7 +39,7 @@ Content-Type: application/json
     "firstname": "joe",
     "lastname": "biden",
     "handle": "@p",
-    "password": "Piccolo11"
+    "password": "island"
 }
 
 ###

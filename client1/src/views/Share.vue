@@ -1,7 +1,7 @@
 <template>
 <div class = "columns ">
   <div class = "column is-one-quarter">
-    <friend-finder />
+    <carousel-2 />
   </div>
   <div class = "column">
   <div class = "share">
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import FriendFinder from '../components/FriendFinder.vue';
+import Carousel2 from '../components/Carousel2.vue';
 import PostLayout from '../components/PostLayout.vue';
 import { AddPost, DeletePost, GetMyPosts } from "../models/Posts";
 import Session from "../models/Session";
@@ -61,7 +61,7 @@ export default {
   async mounted() {
         this.posts = await GetMyPosts();
   },
-  components: { FriendFinder, PostLayout },
+  components: { PostLayout, Carousel2 },
 
   methods: {
         async addPost(){
