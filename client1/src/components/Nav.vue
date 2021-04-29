@@ -20,7 +20,6 @@
           <router-link to="/" class="navbar-item" >Home</router-link>
           <router-link to="/myfeed"  class="navbar-item">MyFeed</router-link>
           <router-link to="/share"  class="navbar-item">Share</router-link>
-          <router-link to="/workouts"  class="navbar-item">Workouts</router-link>
           <router-link to="/myprofile"  class="navbar-item">MyProfile</router-link>
           <div class="navbar-item" v-if="Session.user && Session.user.isAdmin===true">
           <router-link to="/users"  class="navbar-item">Users</router-link>
