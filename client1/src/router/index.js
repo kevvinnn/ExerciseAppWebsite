@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Session from '../models/Session'
-import Workouts from '@/views/Workouts'
 import Share from '@/views/Share'
 import MyProfile from '@/views/MyProfile'
 import SignUp from '@/views/SignUp'
@@ -17,7 +16,6 @@ Vue.use(VueRouter)
 const routes = [
   {path: '/', name: 'Home', component: Home},
   {path: '/share', name: 'Share', component: Share},
-  {path: '/workouts', name: 'Workouts', component: Workouts},
   {path: '/myprofile', name: 'MyProfile', component: MyProfile},
   {path: '/signup', name: 'SignUp', component: SignUp},
   {path: '/login', name: 'Login', component: Login},
