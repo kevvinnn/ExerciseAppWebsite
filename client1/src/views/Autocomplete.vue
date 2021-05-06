@@ -31,7 +31,7 @@ export default Vue.extend({
     },
         computed: {
             filteredDataArray() {
-                return this.users.firstname.filter((option) => {
+                return this.users.filter((option) => {
                     return option
                         .toString()
                         .toLowerCase()
