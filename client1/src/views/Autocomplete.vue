@@ -22,13 +22,10 @@ import { GetAllUsers } from "../models/Users";
 
 export default Vue.extend({
   data: ()=> ({
-    users: [],
+    users: [GetAllUsers()],
     firstname: '',
     selected: null
   }),
-      async mounted() {
-        this.users = await GetAllUsers();
-    },
         computed: {
             filteredDataArray() {
                 return this.users.filter((option) => {
