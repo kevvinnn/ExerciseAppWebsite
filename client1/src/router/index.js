@@ -8,6 +8,7 @@ import SignUp from '@/views/SignUp'
 import Login from '@/views/Login'
 import Users from '@/views/Users'
 import MyFeed from '@/views/MyFeed'
+import Autocomplete from '@/views/Autocomplete'
 
 
 
@@ -21,6 +22,7 @@ const routes = [
   {path: '/login', name: 'Login', component: Login},
   {path: '/users', name: 'Users', component: Users},
   {path: '/myfeed', name: 'MyFeed', component: MyFeed},
+  {path: '/autocomplete', name: 'Autocomplete', component: Autocomplete},
 ]
 
 const router = new VueRouter({
